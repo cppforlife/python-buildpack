@@ -27,6 +27,9 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
+# todo requirements by the function are not specified.
+( cd $ROOT_DIR/serverless && cp Procfile serverless.py requirements.txt $BUILD_DIR/ )
+
 # Use microconda if environment.yml exists and exit
 if [ -f $BUILD_DIR/environment.yml ]; then
   echo "----------------- USING CONDA BUILDPACK -----------------"
